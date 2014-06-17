@@ -21,6 +21,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.includes(:attendances)
+    @users = User.all.includes(:attendances).page(params[:page]).per(1)
   end
 end
